@@ -32,10 +32,25 @@
 
 
 //анонимные функции
-const GetNumbers = function(numbers) {
-    return numbers.filter(num => num % 2 === 0);
-  };
+// const GetNumbers = function(numbers) {
+//     return numbers.filter(num => num % 2 === 0);
+//   };
   
-  console.log(GetNumbers([1, 2, 3, 4, 5, 6])); 
+//   console.log(GetNumbers([1, 2, 3, 4, 5, 6])); 
 
-  
+
+//массивы
+function filterAnagrams(word, wordsList) {
+  const sortWord = (str) => str.split('').sort().join('');
+  const sortedWord = sortWord(word);
+  return wordsList.filter(candidate => sortWord(candidate) === sortedWord);
+}
+
+console.log(filterAnagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']));
+// ['aabb', 'bbaa']
+
+console.log(filterAnagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'racer']));
+// ['carer', 'racer']
+
+console.log(filterAnagrams('laser', ['lazing', 'lazy',  'lacer']));
+// []
