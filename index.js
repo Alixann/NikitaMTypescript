@@ -39,18 +39,63 @@
 //   console.log(GetNumbers([1, 2, 3, 4, 5, 6])); 
 
 
-//массивы
-function filterAnagrams(word, wordsList) {
-  const sortWord = (str) => str.split('').sort().join('');
-  const sortedWord = sortWord(word);
-  return wordsList.filter(candidate => sortWord(candidate) === sortedWord);
-}
+// //массивы
+// function filterAnagrams(word, wordsList) {
+//   const sortWord = (str) => str.split('').sort().join('');
+//   const sortedWord = sortWord(word);
+//   return wordsList.filter(candidate => sortWord(candidate) === sortedWord);
+// }
 
-console.log(filterAnagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']));
-// ['aabb', 'bbaa']
+// console.log(filterAnagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']));
+// // ['aabb', 'bbaa']
 
-console.log(filterAnagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'racer']));
-// ['carer', 'racer']
+// console.log(filterAnagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'racer']));
+// // ['carer', 'racer']
 
-console.log(filterAnagrams('laser', ['lazing', 'lazy',  'lacer']));
-// []
+// console.log(filterAnagrams('laser', ['lazing', 'lazy',  'lacer']));
+// // []
+
+
+// //Объектные типы
+// function isComplete(course) {
+//   return course.lessons.length >= 4;
+// }
+
+// const course = {
+//   name: 'Java',
+//   lessons: ['variables', 'functions', 'conditions', 'aaaaaaa'],
+// };
+
+// console.log(isComplete(course)); 
+
+
+// //enum
+// const ModalStatus = {
+//   Opened: 'Opened',
+//   Closed: 'Closed'
+// };
+// function buildModal(text, status) {
+//   return {
+//       text: text,
+//       status: status
+//   };
+// }
+// // пример использования
+// const modal = buildModal('hexlet forever', ModalStatus.Opened);
+// console.log(modal);
+
+
+// //псевдонимы типов
+// function getOlderUser(user1, user2) {
+//   if (user1.age > user2.age) {
+//       return user1;
+//   } else if (user2.age > user1.age) {
+//       return user2;
+//   } else {
+//       return null;
+//   }
+// }
+// const user1 = { name: 'Petr', age: 8 };
+// const user2 = { name: 'Ivan', age: 10 };
+
+// console.log(getOlderUser(user1, user2));
