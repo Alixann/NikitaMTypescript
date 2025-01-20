@@ -1,4 +1,4 @@
-// 2 задание
+// ---2 задание---
 // function multiply(a, b) {
 //     return a * b;
 //   }
@@ -6,7 +6,7 @@
 //   console.log(multiply(1, 2));
 
 
-// //переменные
+//---переменные---
 // function repeat(str, num) {
 //     let result = '';
 //     for (let i = 0; i < num; i++) {
@@ -18,7 +18,7 @@
 // console.log(repeat('wo', 3));
 
 
-//именованные функции
+//---именованные функции---
 // function getHiddenCard(cardNumber, starsCount = 4) {
 //     const stars = '*'.repeat(starsCount);
 //     const visiblePart = cardNumber.slice(-4);
@@ -31,32 +31,25 @@
 //   console.log(getHiddenCard('2034399002121100', 1));
 
 
-//анонимные функции
+//---анонимные функции---
 // const GetNumbers = function(numbers) {
 //     return numbers.filter(num => num % 2 === 0);
 //   };
-  
 //   console.log(GetNumbers([1, 2, 3, 4, 5, 6])); 
 
 
-// //массивы
+//---массивы---
 // function filterAnagrams(word, wordsList) {
 //   const sortWord = (str) => str.split('').sort().join('');
 //   const sortedWord = sortWord(word);
 //   return wordsList.filter(candidate => sortWord(candidate) === sortedWord);
 // }
-
 // console.log(filterAnagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']));
-// // ['aabb', 'bbaa']
-
 // console.log(filterAnagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'racer']));
-// // ['carer', 'racer']
-
 // console.log(filterAnagrams('laser', ['lazing', 'lazy',  'lacer']));
-// // []
 
 
-// //Объектные типы
+//---Объектные типы---
 // function isComplete(course) {
 //   return course.lessons.length >= 4;
 // }
@@ -69,7 +62,7 @@
 // console.log(isComplete(course)); 
 
 
-// //enum
+//---перечисления---
 // const ModalStatus = {
 //   Opened: 'Opened',
 //   Closed: 'Closed'
@@ -85,7 +78,7 @@
 // console.log(modal);
 
 
-// //псевдонимы типов
+//---псевдонимы типов---
 // function getOlderUser(user1, user2) {
 //   if (user1.age > user2.age) {
 //       return user1;
@@ -95,7 +88,39 @@
 //       return null;
 //   }
 // }
-// const user1 = { name: 'Petr', age: 8 };
-// const user2 = { name: 'Ivan', age: 10 };
-
+// const user1 = { name: 'Alisa', age: 20 };
+// const user2 = { name: 'Yulia', age: 19 };
 // console.log(getOlderUser(user1, user2));
+
+
+//---Тип any---
+// function getParams(query) {
+//     return query
+//       .split('&')
+//       .reduce((acc, param) => {
+//         const [key, value] = param.split('=');
+//         acc[key] = value;
+//         return acc;
+//       }, {}); 
+//   }
+  
+//   // Пример использования:
+//   console.log(getParams('per=10&page=5'));
+//   console.log(getParams('name=hexlet&count=3&order=asc'));
+
+// ---Система модулей---
+function filter(array, predicate) {
+    const result = [];
+    for (let i = 0; i < array.length; i++) {
+        if (predicate(array[i])) {
+            result.push(array[i]);
+        }
+    }
+    return result;
+}
+// Пример использования
+const numbers = [1, -5, 2, 3, 4, 133];
+console.log(filter(numbers, (n) => n > 3));
+console.log(filter(numbers, (n) => n % 2 == 0)); 
+
+  
